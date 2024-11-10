@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --grid-color: rgba(34, 211, 238, 0.1);
+  --grid-size: 30px;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  font-family: 'VT323', monospace;
+  color: #22d3ee;
+  overflow-x: hidden;
+}
+
+/* Grid Background */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+  z-index: 1;
+  animation: pulse-grid 4s ease-in-out infinite;
+  opacity: 0.15;
+}
+
+/* Scrolling Text */
+.scrolling-text-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-bottom: 1px solid #22d3ee;
+  z-index: 50;
+}
+
+.scrolling-text {
+  display: inline-block;
+  animation: scroll 60s linear infinite;
+  color: #22d3ee;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
+
+/* TRON-style Buttons */
+.tron-button {
+  background: transparent;
+  border: 2px solid #22d3ee;
+  color: #22d3ee;
+  padding: 8px 24px;
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+  overflow: hidden;
+}
+
+.tron-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 211, 238, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.tron-button:hover {
+  background: rgba(34, 211, 238, 0.1);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+.tron-button:hover::before {
+  left: 100%;
+}
+
+/* Animations */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-grid {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(34, 211, 238, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.6);
+  }
+}
+
+/* Terminal Styles */
+.terminal-container {
+  background: black;
+  border: 2px solid #22d3ee;
+  padding: 20px;
+  font-family: 'VT323', monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminal-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background: #22d3ee;
+  z-index: 1;
+}
+
+.terminal-text {
+  color: #22d3ee;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Input Styles */
+input {
+  background: black;
+  border: 2px solid #22d3ee;
+  color: #22d3ee;
+  padding: 8px 12px;
+  font-family: 'VT323', monospace;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: black;
+  border: 1px solid #22d3ee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22d3ee;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0891b2;
+}
+
+/* Social Links */
+.social-link {
+  border: 2px solid #22d3ee;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: rgba(34, 211, 238, 0.1);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  transform: scale(1.1);
+}
+
+/* Windows 98/XP inspired styles */
+.win98-button {
+  background: #c0c0c0;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 4px 10px;
+  position: relative;
+  font-family: 'VT323', monospace;
+  color: black;
+  font-size: 1rem;
+  transition: all 0.1s;
+}
+
+.win98-button:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+  padding: 5px 9px 3px 11px;
+}
+
+.win98-input {
+  border: 2px inset #fff;
+  background: #fff;
+  padding: 3px 5px;
+  font-family: 'VT323', monospace;
+}
+
+.win98-window {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  position: relative;
+}
+
+.win98-window-title {
+  background: linear-gradient(90deg, #000080, #1084d0);
+  padding: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.win98-window-content {
+  padding: 10px;
+  background: #c0c0c0;
+}

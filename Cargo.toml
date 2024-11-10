@@ -1,0 +1,4 @@
+[workspace]
+members = [
+    "programs/death_protocol",
+]

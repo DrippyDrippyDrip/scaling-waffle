@@ -1,0 +1,16 @@
+{
+  "name": "Death Token",
+  "symbol": "DEATH",
+  "description": "Death Protocol Governance Token",
+  "death_mint": "FXe6Wq53sNFHQkibdQQmFQQAe6jET4kfrJskdvjJvF8N",
+  "decimals": 9,
+  "initial_supply": 1000000000,
+  "token_program_id": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA",
+  "metadata": {
+    "max_supply": "Uncapped",
+    "initial_apy": "100,000%",
+    "governance_controlled": true,
+    "staking_enabled": true,
+    "treasury_allocation": "10%"
+  }
+}

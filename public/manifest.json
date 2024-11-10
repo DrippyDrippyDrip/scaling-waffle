@@ -1,0 +1,16 @@
+{
+  "name": "DEATH Protocol",
+  "short_name": "DEATH",
+  "description": "DEATH Protocol - Solana Staking Platform",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#22d3ee",
+  "background_color": "#000000"
+}
